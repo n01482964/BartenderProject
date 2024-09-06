@@ -1,0 +1,15 @@
+﻿@model List<BartenderProject.Models.Drink>
+
+<h2>Drinks Menu</h2>
+<ul>
+    @foreach (var drink in Model)
+    {
+        <li>
+            @drink.Name - $@drink.Price
+            <form asp-action="PlaceOrder" method="post">
+                <input type="hidden" name="drinkId" value="@drink.Id" />
+                <button type="submit">Order</button>
+            </form>
+        </li>
+    }
+</ul>

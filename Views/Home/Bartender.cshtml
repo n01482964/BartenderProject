@@ -1,0 +1,15 @@
+﻿@model Queue<BartenderProject.Models.Order>
+
+<h2>Bartender Dashboard</h2>
+
+<form asp-action="CompleteOrder" method="post">
+    <button type="submit">Complete Latest Order</button>
+</form>
+
+<h3>Current Orders</h3>
+<ul>
+    @foreach (var order in Model)
+    {
+        <li>Order #@order.orderId: @order.drinkName</li>
+    }
+</ul>
